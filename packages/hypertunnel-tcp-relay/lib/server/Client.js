@@ -19,6 +19,7 @@ class Client extends EventEmitter {
     this.timeout()
 
     this.socket.on('data', this.onSocketData.bind(this))
+    this.socket.on('error',() => this.debug('error'))
     this.socket.on('close', this.onSocketClose.bind(this))
   }
 
