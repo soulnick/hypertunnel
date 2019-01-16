@@ -15,7 +15,7 @@ class RelayClient extends EventEmitter {
 
     this.opts = opts
     this.options = options
-    this.retry = options.retry || true
+    this.retry = options.retry!=null?!!options.retry : true
 
     this.pairCount = 0
     this.bytes = { tx: 0, rx: 0 }
